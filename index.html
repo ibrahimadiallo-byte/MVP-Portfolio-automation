@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .video-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #f0f0f0;
+            margin-bottom: 2rem;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .video-info {
+            line-height: 2;
+        }
+
+        .video-info h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-info h3 {
+            color: #764ba2;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-info p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .contact-container {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .contact-container h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            line-height: 2.5;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info strong {
+            color: #764ba2;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .video-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="home" class="page active">
+            <h1>My Video Portfolio</h1>
+
+            <div class="video-section">
+                <div class="video-container">
+                    
+                     <video controls>
+                        <source src="RWP_HPC x RW Screening Highlight Reel_ID_03202024_16x9 Final.mp4" type="video/mp4">
+                    </video> 
+                </div>
+                <div class="video-info">
+                    <h2>Young Black Filmmakers Celebration - Harbor Picture Company x Reel Works</h2>
+                    <p>This project was a collaborative effort between Harbor Picture Company and Reel Works to celebrate and spotlight emerging Black filmmakers making waves in the industry. I served as both the lead editor and a camera operator for the event, capturing the energy and creativity of these talented artists as they showcased their work. The highlight reel brought together powerful moments from the evening, weaving together filmmaker interviews, film excerpts, and the genuine excitement of a community coming together to support the next generation of storytellers. It was an honor to not only craft the final edit but to be present at the event itself, documenting the passion and artistry that filled the room. This project reinforced my belief in the importance of amplifying diverse voices in film and celebrating the impact they have on reshaping the industry.</p>
+                    <h3>Skills Used:</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Video Editing</span>
+                        <span class="skill-tag">Adobe Premiere</span>
+                        <span class="skill-tag">Motion Graphics</span>
+                        <span class="skill-tag">Event Videography</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <div class="video-container">
+                    
+                     <video controls>
+                        <source src="2024-08-07_RWP_The Veil Trailer_ID Rough Cut 3.mp4" type="video/mp4">
+                    </video> 
+                </div>
+                <div class="video-info">
+                    <h2>The Veil - Official Trailer</h2>
+                    <p>During my internship at Reel Works, I was brought on as the editor for this short film's trailer. The goal was straightforward but critical: craft a trailer that immediately pulls viewers into the unsettling atmosphere of the story. I leaned heavily into horror aesthetics, using moody visuals and carefully selected sound design to build tension from the first frame. The color grading and pacing were designed to create that slow-burn dread that makes you want to keep watching, while the audio choices amplified the eerie, suspenseful tone. This project taught me a lot about how much power editing has in shaping audience perception and setting expectations for a film's genre and mood before they even hit play.</p>
+                    <h3>Skills Used:</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Trailer Editing</span>
+                        <span class="skill-tag">Storytelling</span>
+                        <span class="skill-tag">Pacing & Timing</span>
+                        <span class="skill-tag"> Adobe Premiere Pro</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <div class="video-container">
+                    
+                     <video controls>
+                        <source src="2024-05-10_RWP_Gala Interview Chris P_R10_V11_SC.mp4" type="video/mp4">
+                    </video> 
+                </div>
+                <div class="video-info">
+                    <h2>Chris Poindexter Honoree Video - Reel Works 2024 Gala</h2>
+                    <p>This project stands out as one of my most challenging and rewarding edits during my time at Reel Works. I was tasked with creating an honoree video for board member Chris Poindexter, who was being recognized at the 2024 Reel Works Gala. The edit required weaving together interview footage with archival material, clips from Spike Lee films, and a mix of old and new Reel Works content to tell a story about the organization's evolution and Chris's impact on it. The pressure was on to deliver something polished and professional for such a significant event, and working closely with the team helped me navigate the complexity of balancing nostalgia with present-day achievements. This project pushed my skills in narrative structure, archival research, and crafting an emotionally resonant piece that honored both an individual and an organization's legacy.</p>
+                    <h3>Skills Used:</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Archival Footage Integration</span>
+                        <span class="skill-tag">After Effects</span>
+                        <span class="skill-tag">Documentary Editing</span>
+                        <span class="skill-tag">Adobe Premiere Pro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="page">
+            <h1>Get In Touch</h1>
+            <div class="contact-container">
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:your.email@example.com">ibrahima.diallo@pursuit.org</a></p>
+                    <p><strong>Phone:</strong> (555) 123-4567</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">www.linkedin.com/in/ibrahima-diallo-65528b200</a></p>
+                    <p><strong>Location:</strong> Brooklyn, New York</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
